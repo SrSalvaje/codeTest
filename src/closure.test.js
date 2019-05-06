@@ -22,9 +22,8 @@ describe('counter', () => {
     return () => {
       //increases the counter by 1
       counter+=1;
-      //returns it and substracts 1, that way the first time is ran it will equal 0
+      //returns it and subtracts 1, that way the first time is ran it will equal 0
       return counter-1
-
     } 
   })();
 

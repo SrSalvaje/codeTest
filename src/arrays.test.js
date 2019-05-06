@@ -29,7 +29,8 @@ const people = [
 describe('getNamesOfPeopleOver', () => {
   const getNamesOfPeopleOver = limit => {
     //.filter gets the people that are over the limit param and .map returns their names
-    return people.filter( person => person.age > limit).map(person => person.name);
+    return (people.filter( person => person.age > limit)
+      .map(person => person.name));
   };
 
   it('returns an array of the names of all people over the given age', () => {
@@ -40,7 +41,9 @@ describe('getNamesOfPeopleOver', () => {
 describe('getSumOfAllAges', () => {
   const getSumOfAllAges = () => {
     //map gets the persons age and .reduce adds them
-    return people.map(person=>person.age).reduce((accumulator, currentValue) => accumulator +currentValue);
+    return (people.map(person=>person.age)
+      .reduce((accumulator, currentValue) => accumulator +currentValue)
+      );
   };
 
   it('calculates the sum of all ages', () => {
@@ -50,7 +53,6 @@ describe('getSumOfAllAges', () => {
 
 describe('getInterests', () => {
   const getInterests = () => {
-    // TODO: Complete this function to allow the test to pass
     //gets all the interests and flattens the embedded arrays
     let interest = people.map(person => person.interests).flat();
     // converts the array into a Set to remove duplicates and destructures it into an array
@@ -71,13 +73,13 @@ describe('getNamesAndInterests', () => {
     const names = people.map(person => person.name),
     //return an array of interests
     interests = people.map(person=>person.interests);
-    //obeject to return
+    //object to return
     let namesAndInterests={};
     //for each name, assign it as a property to the object and use its index to get the corresponding interests array
-    names.forEach((name,index) => namesAndInterests[names[index]]=interests[index] );
+    names.forEach((name,index) => namesAndInterests[name]=interests[index] );
 
     return namesAndInterests
-    
+
   };
 
   it('returns an object with the names as keys, and the interests as values', () => {

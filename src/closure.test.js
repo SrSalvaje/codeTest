@@ -1,6 +1,10 @@
 describe('multiplier', () => {
-  const multiplier = () => {
-    // TODO: Complete this function to allow the test to pass
+  
+  const multiplier = (x) => {
+    
+    return function (y){
+      return x*y;
+    } 
   };
 
   describe('when given a number, a function is returned which when called', () => {

@@ -39,8 +39,8 @@ describe('getNamesOfPeopleOver', () => {
 
 describe('getSumOfAllAges', () => {
   const getSumOfAllAges = () => {
-    // TODO: Complete this function to allow the test to pass
-    
+    //map gets the persons age and .reduce adds them
+    return people.map(person=>person.age).reduce((accumulator, currentValue) => accumulator +currentValue);
   };
 
   it('calculates the sum of all ages', () => {

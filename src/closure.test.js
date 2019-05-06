@@ -14,9 +14,19 @@ describe('multiplier', () => {
 });
 
 describe('counter', () => {
-  const count = () => {
-    // TODO: Complete this function to allow the test to pass
-  };
+  //assign to count the return value of an IIFE
+  const count = (() => {
+    //IIFE sets counter to 0 and returns a function
+    let counter = 0;
+  //this is the function called by count, which now has access to its parent's scope
+    return () => {
+      //increases the counter by 1
+      counter+=1;
+      //returns it and substracts 1, that way the first time is ran it will equal 0
+      return counter-1
+
+    } 
+  })();
 
   it('returns an increasing number each time it is called', () => {
     assert.equal(count(), 0);

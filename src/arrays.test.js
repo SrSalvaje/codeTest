@@ -28,7 +28,8 @@ const people = [
 
 describe('getNamesOfPeopleOver', () => {
   const getNamesOfPeopleOver = limit => {
-    // TODO: Complete this function to allow the test to pass
+    //.filter gets the people that are over the limit param and .map returns their names
+    return people.filter( person => person.age > limit).map(person => person.name);
   };
 
   it('returns an array of the names of all people over the given age', () => {
@@ -39,6 +40,7 @@ describe('getNamesOfPeopleOver', () => {
 describe('getSumOfAllAges', () => {
   const getSumOfAllAges = () => {
     // TODO: Complete this function to allow the test to pass
+    
   };
 
   it('calculates the sum of all ages', () => {

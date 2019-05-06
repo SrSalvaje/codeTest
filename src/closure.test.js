@@ -1,10 +1,7 @@
 describe('multiplier', () => {
   
   const multiplier = (x) => {
-    
-    return function (y){
-      return x*y;
-    } 
+    return (y) => x*y;
   };
 
   describe('when given a number, a function is returned which when called', () => {

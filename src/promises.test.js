@@ -15,12 +15,8 @@ describe('getRandomValue', () => {
 
 describe('getFourRandomValues', () => {
   const getFourRandomValues = (min, max) => {
-    return Promise.all([
-      getRandomValue(min, max),
-      getRandomValue(min, max),
-      getRandomValue(min, max),
-      getRandomValue(min, max)
-    ])
+    //creates a new array of length 4 and it "fills" each index with a getRandomValue callback  
+    return Promise.all( new Array(4).fill(getRandomValue(min, max)))
     //technically this is returning a promise object but the test was written with a .then()
   };
 

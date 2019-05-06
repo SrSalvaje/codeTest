@@ -67,7 +67,17 @@ describe('getInterests', () => {
 
 describe('getNamesAndInterests', () => {
   const getNamesAndInterests = () => {
-    // TODO: Complete this function to allow the test to pass
+    //return an array with the names
+    const names = people.map(person => person.name),
+    //return an array of interests
+    interests = people.map(person=>person.interests);
+    //obeject to return
+    let namesAndInterests={};
+    //for each name, assign it as a property to the object and use its index to get the corresponding interests array
+    names.forEach((name,index) => namesAndInterests[names[index]]=interests[index] );
+
+    return namesAndInterests
+    
   };
 
   it('returns an object with the names as keys, and the interests as values', () => {

@@ -51,6 +51,13 @@ describe('getSumOfAllAges', () => {
 describe('getInterests', () => {
   const getInterests = () => {
     // TODO: Complete this function to allow the test to pass
+    //gets all the interests and flattens the embedded arrays
+    let interest = people.map(person => person.interests).flat();
+    // converts the array into a Set to remove duplicates and destructures it into an array
+    const uniqueInterests = [...new Set(interest)]; 
+    //returns them sorted
+    return uniqueInterests.sort((firstEl, secondEl)=> firstEl.localeCompare(secondEl));
+
   };
 
   it('returns a array of all interests, no duplicates, sorted', () => {
